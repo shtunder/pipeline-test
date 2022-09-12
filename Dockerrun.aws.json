@@ -4,14 +4,12 @@
     {
       "name" : "pipeline-test",
       "image" : "shtunder/pipeline-test:0.1",
-      "essential" : false,
       "portMappings" : [
         {
           "containerPort" : 8080,
-          "hostPort" : 80
+          "hostPort" : 8080
         }
-      ],
-      "memory" : 500
+      ]
     }
   ]
 }
