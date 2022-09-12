@@ -1,10 +1,12 @@
 sudo: required
 language: java
+jdk:
+  - oraclejdk8
 services:
   - docker
 
-script:
-  - sudo mvn clean package
+before_install:
+  - mvn clean package -DskipTests=true -Dmaven.javadoc.skip=true -B -V
   - docker build -t shtunder/pipeline-test:0.1 .
 
 
