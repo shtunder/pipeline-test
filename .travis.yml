@@ -7,14 +7,16 @@ services:
 before_install:
   - mvn -N io.takari:maven:wrapper
   - mvn clean package
-  - docker build -t shtunder/pipeline-test:0.1
 
 install:
+
 
 before_script:
 
 script:
+  - docker build -t shtunder/pipeline-test:0.1 .
 
+    
 after_script:
 
 
