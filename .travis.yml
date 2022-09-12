@@ -4,7 +4,7 @@ services:
   - docker
 
 script:
-  - mvn clean package
+  - sudo mvn clean package
   - docker build -t shtunder/pipeline-test:0.1 .
 
 
