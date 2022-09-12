@@ -3,8 +3,8 @@ language: java
 services:
   - docker
 
-before_install:
-  - ./mvnw install
+script:
+  - mvn clean package
   - docker build -t shtunder/pipeline-test:0.1 .
 
 
