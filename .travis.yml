@@ -15,14 +15,16 @@ before_script:
 
 script:
   - docker build -t shtunder/pipeline-test:0.1 .
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push shtunder/pipeline-test:0.1
 
-    
+
 after_script:
 
 
-after_success:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push shtunder/pipeline-test:0.1
+#after_success:
+#  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+#  - docker push shtunder/pipeline-test:0.1
 
 after_failure:
 
