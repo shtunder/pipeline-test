@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class GreetingController {
 
     // Some changes
+    // New comment
+    // New changes
     @GetMapping("/hello")
     public String hello(){
         return "Demo application with Spring Boot!";
