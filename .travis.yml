@@ -10,16 +10,12 @@ before_install:
 
 install:
 
-
 before_script:
 
 script:
   - docker build -t shtunder/pipeline-test:0.1 .
 
-
-
 after_script:
-
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
@@ -29,6 +25,9 @@ after_failure:
 
 deploy:
   provider: elasticbeanstalk
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
   region: eu-north-1
   app: docker-pipeline-test
   env: Dockerpipelinetest-env
@@ -36,5 +35,3 @@ deploy:
   bucket_path: docker-pipeline-test
   on:
     branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
