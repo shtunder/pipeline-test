@@ -1,17 +1,13 @@
 {
-  "AWSEBDockerrunVersion" : 2,
-  "containerDefinitions" : [
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "shtunder/pipeline-test:0.1",
+    "Update": "true"
+  },
+  "Ports": [
     {
-      "name" : "pipeline-test",
-      "image" : "shtunder/pipeline-test:0.1",
-      "essential" : false,
-      "portMappings" : [
-        {
-          "containerPort" : 8080,
-          "hostPort" : 8080
-        }
-      ],
-      "memory" : 500
+      "hostPort": 8080,
+      "containerPort": 8080
     }
   ]
 }
