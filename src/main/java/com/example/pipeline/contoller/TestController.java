@@ -5,8 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TestController {
-
-    //Need for AWS
+    
     @GetMapping("/")
     public String health() {
         return "Hello & Welcome to Bukable !!!";
